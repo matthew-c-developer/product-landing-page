@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 10px;
+    font-family: sans-serif;
+    --darker-blue: #03111A;
+    --dark-blue: #0A2333;
+    --medium-blue: #406680;
+    --light-blue: #8FACBF;
+    --lighter-blue: #CFDCE6;
+  }
+  body {
+    font-size: 1.6rem;
+    background-color: var(--lighter-blue);
+    color: var(--darker-blue);
+  }
+  a {
+    color: var(--darker-blue);
+    text-decoration: none;
+  }
+  header {
+    background: var(--light-blue);
+    position: sticky;
+    top: 0;
+    padding: 1.0rem 0;
+  }
+  #header-img {
+    display: block;
+    width: 100px;
+    height: auto;
+    padding: 1.0rem;
+  }
+  nav {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  nav ul a {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+  #page-title {
+    display: flex;
+    align-items: center;
+  }
+  #video {
+    display: block;
+    width: 90%;
+    margin: 2.0rem auto 0 auto;
+  }
+  #specs-link {
+    text-decoration: underline;
+  }
+  li {
+    list-style: none;
+  }
+  h2 {
+    text-align: center;
+    padding: 1.0rem 0;
+    margin-top: 5.0rem;
+  }
+  p {
+    width: 90%;
+    margin: 0 auto;
+  }
+  form {
+    display: block;
+  }
+  input {
+    display: block;
+    border: none;
+    border-radius: none;
+    width: 90%;
+    padding: 1.0rem;
+    margin: 1.0rem auto;
+  }
+  #submit {
+    width: 90%;
+    border: none;
+    border-radius: none;
+    background-color: var(--light-blue);
+    padding: 1.0rem;
+  }
+  #get-a-quote ul {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  #get-a-quote ul li a {
+    display: block;
+    width: 90%;
+    margin: 2.0rem auto;
+    padding: 5.0rem 0;
+  }
+  #infrared, #visible, #ultraviolet {
+    color: white;
+    font-weight: bold;
+    text-shadow: 0.2rem 0.2rem 0.2rem black, -0.2rem -0.2rem 0.2rem black, -0.2rem 0.2rem 0.2rem black, 0.2rem -0.2rem 0.2rem black;
+  }
+  #infrared {
+    background: linear-gradient(90deg, #000000 25%, #440000 75%, #880000 100%);
+  }
+  #visible {
+    background: linear-gradient(90deg, red , orange, yellow, green, cyan, blue, magenta);
+  }
+  #ultraviolet {
+    background: linear-gradient(90deg, #FF00FF 25%, #FF88FF 75%, #FFFFFF 100%);
+  }
+  footer {
+    display: block;
+    width: 90%;
+    margin: 1.0rem auto;
+  }
+  
+  @media screen and (min-width: 600px) {
+    p, #video, footer {
+      max-width: 600px;
+    }
+    input {
+      max-width: 400px;
+    }
+    nav {
+      flex-direction: row;
+      max-width: 800px;
+      justify-content: space-between;
+    }
+    nav ul {
+      display: flex;
+    }
+    nav ul li {
+      margin: 0 2.0rem;
+    }
+    #get-a-quote ul {
+      display: flex;
+      width: 90%;
+      max-width: 600px;
+      margin: 0 auto;
+      justify-content: space-between;
+    }
+    #get-a-quote ul li {
+      width: 30%;
+    }
+    #get-a-quote ul li a {
+      width: 100%;
+    }
+  }
