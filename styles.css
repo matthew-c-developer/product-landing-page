@@ -1,154 +1,185 @@
+/*some normalization for entire document*/
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+/*set the size of a rem and create color variables*/
+html {
+  font-size: 10px;
+  font-family: sans-serif;
+  --darker-blue: #03111A;
+  --dark-blue: #0A2333;
+  --medium-blue: #406680;
+  --light-blue: #8FACBF;
+  --lighter-blue: #CFDCE6;
+}
+/*set styles for the whole page*/
+body {
+  font-size: 1.6rem;
+  background-color: var(--lighter-blue);
+  color: var(--darker-blue);
+}
+/*style links*/
+a {
+  color: var(--darker-blue);
+  text-decoration: none;
+}
+/*style page header*/
+header {
+  background: var(--light-blue);
+  position: sticky;
+  top: 0;
+  padding: 1.0rem 0;
+}
+/*style company logo*/
+#header-img {
+  display: block;
+  width: 100px;
+  height: auto;
+  padding: 1.0rem;
+}
+/*style navigation menu*/
+nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+}
+/*center navigation links*/
+nav ul a {
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+/*put logo and company name side by side*/
+#page-title {
+  display: flex;
+  align-items: center;
+}
+/*style video*/
+#video {
+  display: block;
+  width: 90%;
+  margin: 2.0rem auto 0 auto;
+}
+/*add normal link appearance to the inline link*/
+#specs-link {
+  text-decoration: underline;
+}
+/*remove bullet points from list items*/
+li {
+  list-style: none;
+}
+/*style section headings*/
+h2 {
+  text-align: center;
+  padding: 1.0rem 0;
+  margin-top: 5.0rem;
+}
+/*style paragraphs*/
+p {
+  width: 90%;
+  margin: 0 auto;
+}
+/*format form*/
+form {
+  display: block;
+}
+/*style inputs in form*/
+input {
+  display: block;
+  border: none;
+  border-radius: none;
+  width: 90%;
+  padding: 1.0rem;
+  margin: 1.0rem auto;
+}
+/*style submit button*/
+#submit {
+  width: 90%;
+  border: none;
+  border-radius: none;
+  background-color: var(--light-blue);
+  padding: 1.0rem;
+}
+/*style list of links for getting a quote based on wavelength*/
+#get-a-quote ul {
+  display: block;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+/*style wavelength links*/
+#get-a-quote ul li a {
+  display: block;
+  width: 90%;
+  margin: 2.0rem auto;
+  padding: 5.0rem 0;
+}
+/*further styles for wavelength links*/
+#infrared, #visible, #ultraviolet {
+  color: white;
+  font-weight: bold;
+  text-shadow: 0.2rem 0.2rem 0.2rem black, -0.2rem -0.2rem 0.2rem black, -0.2rem 0.2rem 0.2rem black, 0.2rem -0.2rem 0.2rem black;
+}
+/*style infrared link background*/
+#infrared {
+  background: linear-gradient(90deg, #000000 25%, #440000 75%, #880000 100%);
+}
+/*style visible spectrum link background*/
+#visible {
+  background: linear-gradient(90deg, red , orange, yellow, green, cyan, blue, magenta);
+}
+/*style ultraviolet link background*/
+#ultraviolet {
+  background: linear-gradient(90deg, #FF00FF 25%, #FF88FF 75%, #FFFFFF 100%);
+}
+/*style footer*/
+footer {
+  display: block;
+  width: 90%;
+  margin: 1.0rem auto;
+}
+/*make page reponsive for bigger screens*/
+@media screen and (min-width: 600px) {
+  /*make sure elements on page don't stretch too big*/
+  p, #video, footer {
+    max-width: 600px;
   }
-  html {
-    font-size: 10px;
-    font-family: sans-serif;
-    --darker-blue: #03111A;
-    --dark-blue: #0A2333;
-    --medium-blue: #406680;
-    --light-blue: #8FACBF;
-    --lighter-blue: #CFDCE6;
-  }
-  body {
-    font-size: 1.6rem;
-    background-color: var(--lighter-blue);
-    color: var(--darker-blue);
-  }
-  a {
-    color: var(--darker-blue);
-    text-decoration: none;
-  }
-  header {
-    background: var(--light-blue);
-    position: sticky;
-    top: 0;
-    padding: 1.0rem 0;
-  }
-  #header-img {
-    display: block;
-    width: 100px;
-    height: auto;
-    padding: 1.0rem;
-  }
-  nav {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
-  }
-  nav ul a {
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-  #page-title {
-    display: flex;
-    align-items: center;
-  }
-  #video {
-    display: block;
-    width: 90%;
-    margin: 2.0rem auto 0 auto;
-  }
-  #specs-link {
-    text-decoration: underline;
-  }
-  li {
-    list-style: none;
-  }
-  h2 {
-    text-align: center;
-    padding: 1.0rem 0;
-    margin-top: 5.0rem;
-  }
-  p {
-    width: 90%;
-    margin: 0 auto;
-  }
-  form {
-    display: block;
-  }
+  /*make sure form elements don't stretch too big*/
   input {
-    display: block;
-    border: none;
-    border-radius: none;
-    width: 90%;
-    padding: 1.0rem;
-    margin: 1.0rem auto;
+    max-width: 400px;
   }
-  #submit {
-    width: 90%;
-    border: none;
-    border-radius: none;
-    background-color: var(--light-blue);
-    padding: 1.0rem;
+  /*style navigation menu*/
+  nav {
+    flex-direction: row;
+    max-width: 800px;
+    justify-content: space-between;
   }
+  /*more styles for navigation menu*/
+  nav ul {
+    display: flex;
+  }
+  /*style navigation list items*/
+  nav ul li {
+    margin: 0 2.0rem;
+  }
+  /*make quote links spreading horizontally*/
   #get-a-quote ul {
-    display: block;
-    width: 100%;
+    display: flex;
+    width: 90%;
+    max-width: 600px;
     margin: 0 auto;
-    text-align: center;
+    justify-content: space-between;
   }
-  
+  /*style quote list items*/
+  #get-a-quote ul li {
+    width: 30%;
+  }
+  /*style quote links*/
   #get-a-quote ul li a {
-    display: block;
-    width: 90%;
-    margin: 2.0rem auto;
-    padding: 5.0rem 0;
+    width: 100%;
   }
-  #infrared, #visible, #ultraviolet {
-    color: white;
-    font-weight: bold;
-    text-shadow: 0.2rem 0.2rem 0.2rem black, -0.2rem -0.2rem 0.2rem black, -0.2rem 0.2rem 0.2rem black, 0.2rem -0.2rem 0.2rem black;
-  }
-  #infrared {
-    background: linear-gradient(90deg, #000000 25%, #440000 75%, #880000 100%);
-  }
-  #visible {
-    background: linear-gradient(90deg, red , orange, yellow, green, cyan, blue, magenta);
-  }
-  #ultraviolet {
-    background: linear-gradient(90deg, #FF00FF 25%, #FF88FF 75%, #FFFFFF 100%);
-  }
-  footer {
-    display: block;
-    width: 90%;
-    margin: 1.0rem auto;
-  }
-  
-  @media screen and (min-width: 600px) {
-    p, #video, footer {
-      max-width: 600px;
-    }
-    input {
-      max-width: 400px;
-    }
-    nav {
-      flex-direction: row;
-      max-width: 800px;
-      justify-content: space-between;
-    }
-    nav ul {
-      display: flex;
-    }
-    nav ul li {
-      margin: 0 2.0rem;
-    }
-    #get-a-quote ul {
-      display: flex;
-      width: 90%;
-      max-width: 600px;
-      margin: 0 auto;
-      justify-content: space-between;
-    }
-    #get-a-quote ul li {
-      width: 30%;
-    }
-    #get-a-quote ul li a {
-      width: 100%;
-    }
-  }
+}
